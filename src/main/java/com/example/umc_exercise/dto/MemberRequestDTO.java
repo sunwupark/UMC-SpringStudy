@@ -14,6 +14,8 @@ public class MemberRequestDTO {
   public static class JoinDto{
     @NotBlank
     String name;
+    @NotBlank
+    String email;
     @NotNull
     Integer gender;
     @NotNull
