@@ -31,4 +31,8 @@ public class Store {
   @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
   List<Review> reviewList = new ArrayList<>();
 
+  @OneToOne
+  @JoinColumn(name = "location")
+  private Location location;
+
 }
