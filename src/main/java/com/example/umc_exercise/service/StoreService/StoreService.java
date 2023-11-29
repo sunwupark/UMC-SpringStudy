@@ -5,5 +5,5 @@ import com.example.umc_exercise.dto.StoreRequestDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
 public interface StoreService {
-  public Store register(@RequestBody StoreRequestDTO.JoinDTO request);
+  public Store register(@RequestBody StoreRequestDTO.registerStore request);
 }

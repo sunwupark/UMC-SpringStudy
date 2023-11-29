@@ -20,9 +20,8 @@ public class StoreRestController {
   private final StoreService storeService;
 
   @PostMapping
-  public ApiResponse<StoreResponseDTO.JoinResultDTO> registerStore(@RequestBody StoreRequestDTO.JoinDTO request) {
-    Store store = storeService.register(request);
-    return ApiResponse.onSuccess(StoreConverter.toJoinResultDTO(store));
+  public ApiResponse<StoreResponseDTO.JoinResultDTO> registerStore(@RequestBody @Valid StoreRequestDTO.registerStore request) {
+    return ApiResponse.onSuccess(StoreConverter.toJoinResultDTO(storeService.register(request)));
   }
 
 }
