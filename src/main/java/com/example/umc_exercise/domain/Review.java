@@ -3,10 +3,14 @@ package com.example.umc_exercise.domain;
 import com.example.umc_exercise.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
 @Getter
 @Builder
+@DynamicUpdate
+@DynamicInsert
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Review extends BaseEntity {
@@ -20,6 +24,7 @@ public class Review extends BaseEntity {
 
   private Float score;
 
+  @Column(nullable = false, length = 256)
   private String comment;
 
   @ManyToOne(fetch = FetchType.LAZY)
