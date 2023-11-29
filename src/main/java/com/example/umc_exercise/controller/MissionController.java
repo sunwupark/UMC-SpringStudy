@@ -4,7 +4,7 @@ import com.example.umc_exercise.apiPayload.ApiResponse;
 import com.example.umc_exercise.domain.Mission;
 import com.example.umc_exercise.dto.MissionRequest;
 import com.example.umc_exercise.dto.MissionResponse;
-import com.example.umc_exercise.service.MissionService;
+import com.example.umc_exercise.service.MissionService.MissionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
