@@ -14,5 +14,6 @@ public class Location {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Column(nullable = false, length = 20)
   String name;
 }
