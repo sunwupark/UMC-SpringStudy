@@ -26,6 +26,7 @@ public enum ErrorStatus implements BaseErrorCode {
 
   // Store Error
   STORE_LOCATION_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4004", "가게의 위치가 존재하지 않습니다"),
+  STORE_MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4005", "가게가 존재하지 않습니다"),
 
   // Review ERROR
   REVIEW_STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4004", "리뷰 대상 가게가 존재하지 않습니다"),
