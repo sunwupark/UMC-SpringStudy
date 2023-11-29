@@ -1,4 +1,4 @@
-package com.example.umc_exercise.service;
+package com.example.umc_exercise.service.MissionService;
 
 import com.example.umc_exercise.apiPayload.code.status.ErrorStatus;
 import com.example.umc_exercise.converter.MissionConverter;
