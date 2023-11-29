@@ -27,10 +27,15 @@ public enum ErrorStatus implements BaseErrorCode {
   // Store Error
   STORE_LOCATION_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4004", "가게의 위치가 존재하지 않습니다"),
   STORE_MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4005", "가게가 존재하지 않습니다"),
+  STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4006", "가게가 존재하지 않습니다"),
 
   // Review ERROR
   REVIEW_STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4004", "리뷰 대상 가게가 존재하지 않습니다"),
-  REVIEW_MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4005", "리뷰 대상 멤버가 존재하지 않습니다");
+  REVIEW_MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4005", "리뷰 대상 멤버가 존재하지 않습니다"),
+
+  // Mission Error
+  MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4004", "미션이 존재하지 않습니다"),
+  MISSION_CHALLENGING(HttpStatus.BAD_REQUEST, "MISSION4005", "미션은 진행중인 상태입니다");
 
   private final HttpStatus httpStatus;
   private final String code;
