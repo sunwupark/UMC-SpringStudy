@@ -2,8 +2,8 @@ package com.example.umc_exercise.validation.validator;
 
 import com.example.umc_exercise.repository.LocationRepository;
 import com.example.umc_exercise.validation.annotation.ExistLocation;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.*;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import com.example.umc_exercise.apiPayload.code.status.ErrorStatus;

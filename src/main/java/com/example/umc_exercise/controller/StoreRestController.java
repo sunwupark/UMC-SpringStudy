@@ -2,16 +2,14 @@ package com.example.umc_exercise.controller;
 
 import com.example.umc_exercise.apiPayload.ApiResponse;
 import com.example.umc_exercise.converter.StoreConverter;
-import com.example.umc_exercise.domain.Store;
 import com.example.umc_exercise.dto.StoreRequestDTO;
 import com.example.umc_exercise.dto.StoreResponseDTO;
 import com.example.umc_exercise.service.StoreService.StoreService;
-import io.swagger.annotations.Api;
-import jakarta.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +19,7 @@ public class StoreRestController {
 
   @PostMapping
   public ApiResponse<StoreResponseDTO.JoinResultDTO> registerStore(@RequestBody @Valid StoreRequestDTO.registerStore request) {
-    return ApiResponse.onSuccess(StoreConverter.toJoinResultDTO(storeService.register(request)));
+    return ApiResponse.onSuccess(StoreConverter.toRegisterRPDTO(storeService.register(request)));
   }
 
 }

@@ -3,7 +3,7 @@ package com.example.umc_exercise.domain.mapping;
 import com.example.umc_exercise.domain.FoodCategory;
 import com.example.umc_exercise.domain.Member;
 import com.example.umc_exercise.domain.common.BaseEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Entity

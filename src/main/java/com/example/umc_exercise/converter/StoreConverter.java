@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class StoreConverter {
 
-  public static StoreResponseDTO.JoinResultDTO toJoinResultDTO(Store store){
+  public static StoreResponseDTO.JoinResultDTO toRegisterRPDTO(Store store){
     return StoreResponseDTO.JoinResultDTO.builder()
             .store_id(store.getId())
             .createdAt(LocalDateTime.now())

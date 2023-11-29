@@ -2,7 +2,7 @@ package com.example.umc_exercise.domain;
 
 import com.example.umc_exercise.domain.common.BaseEntity;
 import com.example.umc_exercise.domain.mapping.MemberMission;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

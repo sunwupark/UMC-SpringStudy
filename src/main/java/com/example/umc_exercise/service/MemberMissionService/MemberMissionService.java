@@ -11,6 +11,8 @@ public interface MemberMissionService {
   public MemberMissionResponseDTO.registerResponseDTO registerMission(MemberMissionRequestDTO.registerMemberMissionDTO memberMissionRequestDTO);
   public List<MemberMission> findAll();
 
+  public Optional<MemberMission> findById(Long id);
+
   public Optional<MemberMission> findByMissionIdAndMemberId(Long MissionId, Long MemberId);
 
 }

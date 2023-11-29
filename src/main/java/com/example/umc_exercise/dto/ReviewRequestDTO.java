@@ -9,9 +9,11 @@ public class ReviewRequestDTO {
   public static class addReview{
     @ExistStore
     Long store_id;
+
     String comment;
     String title;
     Float score;
+
     @ExistMember
     Long member_id;
 

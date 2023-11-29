@@ -9,10 +9,10 @@ import com.example.umc_exercise.dto.MissionRequest;
 import com.example.umc_exercise.dto.MissionResponse;
 import com.example.umc_exercise.service.MemberMissionService.MemberMissionService;
 import com.example.umc_exercise.service.MissionService.MissionService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class MemberMissionController {
   }
 
   @PostMapping
-  public ApiResponse<MemberMissionResponseDTO.registerResponseDTO> register(@RequestBody @Valid MemberMissionRequestDTO.registerMemberMissionDTO missionRegisterRequestDTO) throws IOException {
+  public ApiResponse<MemberMissionResponseDTO.registerResponseDTO> register(@RequestBody @Valid MemberMissionRequestDTO.registerMemberMissionDTO missionRegisterRequestDTO){
     return ApiResponse.onSuccess(memberMissionService.registerMission(missionRegisterRequestDTO));
   }
 

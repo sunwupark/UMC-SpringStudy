@@ -21,7 +21,6 @@ public class StoreServiceImpl implements StoreService{
   @Override
   public Store register(StoreRequestDTO.registerStore request){
     Location location = locationRepository.findById(request.getLocation_id()).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_LOCATION_NOT_FOUND));
-    System.out.println("location: " + location.getName());
     Store store = Store.builder()
             .address(request.getAddress())
             .score(request.getRating())

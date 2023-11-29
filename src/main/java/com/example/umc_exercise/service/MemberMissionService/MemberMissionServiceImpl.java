@@ -36,6 +36,10 @@ public class MemberMissionServiceImpl implements MemberMissionService{
     return memberMissionRepository.findMemberMissionByMemberAndMission(MissionId, MemberId);
   }
 
+  public Optional<MemberMission> findById(Long id){
+    return memberMissionRepository.findById(id);
+  }
+
   @Override
   public MemberMissionResponseDTO.registerResponseDTO registerMission(MemberMissionRequestDTO.registerMemberMissionDTO memberMissionRequestDTO){
     Member member = memberRepository.findById(memberMissionRequestDTO.getMemberId()).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));

@@ -11,12 +11,13 @@ import com.example.umc_exercise.dto.StoreRequestDTO;
 import com.example.umc_exercise.dto.StoreResponseDTO;
 import com.example.umc_exercise.service.ReviewService.ReviewService;
 import com.example.umc_exercise.service.StoreService.StoreService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

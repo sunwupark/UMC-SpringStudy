@@ -1,7 +1,7 @@
 package com.example.umc_exercise.domain;
 
 import com.example.umc_exercise.domain.mapping.MemberPrefer;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

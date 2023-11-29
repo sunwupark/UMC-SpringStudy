@@ -31,6 +31,7 @@ public class ReviewServiceImpl implements ReviewService {
             .member(member)
             .comment(request.getComment())
             .score(request.getScore())
+            .title(request.getTitle())
             .build();
     return reviewRepository.save(review);
   }

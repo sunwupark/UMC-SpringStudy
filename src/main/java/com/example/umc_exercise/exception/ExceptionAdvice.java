@@ -3,8 +3,8 @@ package com.example.umc_exercise.exception;
 import com.example.umc_exercise.apiPayload.ApiResponse;
 import com.example.umc_exercise.apiPayload.code.ErrorReasonDTO;
 import com.example.umc_exercise.apiPayload.code.status.ErrorStatus;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.ConstraintViolationException;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -51,7 +51,6 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
   @org.springframework.web.bind.annotation.ExceptionHandler
   public ResponseEntity<Object> exception(Exception e, WebRequest request) {
     e.printStackTrace();
-
     return handleExceptionInternalFalse(e, ErrorStatus._INTERNAL_SERVER_ERROR, HttpHeaders.EMPTY, ErrorStatus._INTERNAL_SERVER_ERROR.getHttpStatus(),request, e.getMessage());
   }
 

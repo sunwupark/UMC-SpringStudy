@@ -8,6 +8,7 @@ import com.example.umc_exercise.service.MissionService.MissionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class MissionController {
   }
 
   @PostMapping
-  public ApiResponse<MissionResponse.MissionRegisterResponseDTO> register(@RequestBody MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) throws IOException {
+  public ApiResponse<MissionResponse.MissionRegisterResponseDTO> register(@RequestBody @Valid MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) throws IOException {
     return ApiResponse.onSuccess(missionService.register(missionRegisterRequestDTO));
   }
 

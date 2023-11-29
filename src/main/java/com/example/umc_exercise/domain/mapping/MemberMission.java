@@ -4,7 +4,7 @@ import com.example.umc_exercise.domain.Member;
 import com.example.umc_exercise.domain.Mission;
 import com.example.umc_exercise.domain.common.BaseEntity;
 import com.example.umc_exercise.domain.enums.*;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Entity

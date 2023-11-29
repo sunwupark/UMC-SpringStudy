@@ -12,7 +12,9 @@ import com.example.umc_exercise.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,8 +25,7 @@ public class MissionService {
   private final StoreRepository storeRepository;
 
   @Transactional
-  public MissionResponse.MissionRegisterResponseDTO register(MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) throws IOException {
-    System.out.println("missionRegisterRequestDTO = " + missionRegisterRequestDTO.getMissionSpec());
+  public MissionResponse.MissionRegisterResponseDTO register(@RequestBody @Valid MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) throws IOException {
     Store store = storeRepository.findById(missionRegisterRequestDTO.getShop_id()).orElseThrow(() -> new MissionHandler(ErrorStatus.STORE_MISSION_NOT_FOUND));
     Mission mission = missionRepository.save(MissionConverter.toMissionEntity(missionRegisterRequestDTO, store));
     return MissionConverter.missionRegisterResponseDTO(mission);

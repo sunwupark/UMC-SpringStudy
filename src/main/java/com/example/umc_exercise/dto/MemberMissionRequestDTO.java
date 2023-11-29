@@ -11,7 +11,7 @@ public class MemberMissionRequestDTO {
   @AllArgsConstructor
   @NoArgsConstructor
   @Builder
-  @ExistChallengingMissions(memberId = "memberId", missionId = "missionId")
+  @ExistChallengingMissions(message = "이미 도전 중인 미션입니다.", memberId = "memberId", missionId = "missionId")
   public static class registerMemberMissionDTO{
     Long memberId;
     Long missionId;

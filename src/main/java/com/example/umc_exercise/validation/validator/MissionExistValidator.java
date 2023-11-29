@@ -7,8 +7,8 @@ import com.example.umc_exercise.service.FoodCategoryService.FoodCategoryQuerySer
 import com.example.umc_exercise.service.MemberMissionService.MemberMissionService;
 import com.example.umc_exercise.validation.annotation.ExistCategories;
 import com.example.umc_exercise.validation.annotation.ExistChallengingMissions;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.*;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerErrorException;
@@ -38,7 +38,7 @@ public class MissionExistValidator implements ConstraintValidator<ExistChallengi
         Long mission_id = getFieldValue(o, missionId);
 
         Optional<MemberMission> memberMission = memberMissionService.findByMissionIdAndMemberId(mission_id, member_id);
-        if(!memberMission.isPresent()) {
+        if(memberMission.isEmpty()) {
             return true;
         }
         if (memberMission.get().getStatus() == MissionStatus.CHALLENGING) {
@@ -46,9 +46,7 @@ public class MissionExistValidator implements ConstraintValidator<ExistChallengi
             context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_CHALLENGING.toString()).addConstraintViolation();
             return false;
         }
-
         return true;
-
     }
 
     private Long getFieldValue(Object object, String fieldName) throws ServerErrorException {

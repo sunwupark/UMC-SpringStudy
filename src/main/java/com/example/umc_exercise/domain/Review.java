@@ -1,7 +1,7 @@
 package com.example.umc_exercise.domain;
 
 import com.example.umc_exercise.domain.common.BaseEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -19,7 +19,7 @@ public class Review extends BaseEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false, length = 100)
+  @Column(nullable = true, length = 100)
   private String title;
 
   private Float score;

@@ -1,9 +1,7 @@
 package com.example.umc_exercise.dto;
 
 import com.example.umc_exercise.validation.annotation.ExistCategories;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import javax.validation.constraints.*;
 import lombok.Getter;
 
 import java.util.List;

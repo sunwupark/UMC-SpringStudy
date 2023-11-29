@@ -2,8 +2,8 @@ package com.example.umc_exercise.validation.annotation;
 
 import com.example.umc_exercise.validation.validator.CategoriesExistValidator;
 import com.example.umc_exercise.validation.validator.MissionExistValidator;
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
+import javax.validation.Constraint;
+import javax.validation.Payload;
 
 import java.lang.annotation.*;
 import java.math.BigInteger;
