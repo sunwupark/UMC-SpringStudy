@@ -12,10 +12,7 @@ import com.example.umc_exercise.dto.StoreResponseDTO;
 import com.example.umc_exercise.service.ReviewService.ReviewService;
 import com.example.umc_exercise.service.StoreService.StoreService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
