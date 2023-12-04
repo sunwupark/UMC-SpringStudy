@@ -5,12 +5,14 @@ import com.example.umc_exercise.domain.Member;
 import com.example.umc_exercise.domain.Review;
 import com.example.umc_exercise.domain.Store;
 import com.example.umc_exercise.dto.ReviewRequestDTO;
-import com.example.umc_exercise.exception.handler.MemberHandler;
 import com.example.umc_exercise.exception.handler.ReviewHandler;
+import com.example.umc_exercise.exception.handler.StoreHandler;
 import com.example.umc_exercise.repository.MemberRepository;
 import com.example.umc_exercise.repository.ReviewRepository;
 import com.example.umc_exercise.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,6 +36,12 @@ public class ReviewServiceImpl implements ReviewService {
             .title(request.getTitle())
             .build();
     return reviewRepository.save(review);
+  }
+
+  @Override
+  public Page<Review> getReview(Long shop_id, Integer page){
+    Store store = storeRepository.findById(shop_id).orElseThrow(() -> new StoreHandler(ErrorStatus.REVIEW_STORE_NOT_FOUND));
+    return reviewRepository.findAllByStore(store, PageRequest.of(page,10));
   }
 
 }
