@@ -6,7 +6,7 @@ import lombok.Getter;
 
 public class ReviewRequestDTO {
   @Getter
-  public static class addReview{
+  public static class addReview {
     @ExistStore
     Long store_id;
 
@@ -16,6 +16,5 @@ public class ReviewRequestDTO {
 
     @ExistMember
     Long member_id;
-
   }
 }
