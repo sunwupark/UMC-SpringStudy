@@ -5,6 +5,7 @@ import com.example.umc_exercise.converter.MemberConverter;
 import com.example.umc_exercise.domain.Member;
 import com.example.umc_exercise.dto.*;
 import com.example.umc_exercise.service.MemberService.MemberCommandService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,7 @@ public class MemberRestController {
 
   private final MemberCommandService memberCommandService;
 
+  @Operation(summary = "멤버 등록 API", description = "멤버 등록 API이며")
   @PostMapping("/")
   public ApiResponse<MemberResponseDTO.JoinResultDTO> join(@RequestBody @Valid MemberRequestDTO.JoinDto request){
     Member member = memberCommandService.joinMember(request);
