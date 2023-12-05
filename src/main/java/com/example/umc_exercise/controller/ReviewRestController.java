@@ -41,6 +41,9 @@ public class ReviewRestController {
           @Parameter(name = "page", description = "페이지 번호, 0번이 1 페이지 입니다."),
   })
   public ApiResponse<ReviewResponseDTO.ReviewPreViewListDTO> getReviews(@ExistStore @PathVariable(name = "storeId") Long storeId, @CheckPage @RequestParam Integer page){
+    if(page >= 1){
+      page -= 1;
+    }
     Page<Review> review = reviewService.getReview(storeId, page);
     return ApiResponse.onSuccess(ReviewConverter.reviewPreViewListDTO(review));
   }
@@ -52,7 +55,7 @@ public class ReviewRestController {
           @Parameter(name = "page", description = "페이지 번호, 0번이 1 페이지 입니다."),
   })
   public ApiResponse<ReviewResponseDTO.ReviewPreViewListDTO> getMyReviews(@ExistMember @PathVariable(name = "memberId") Long memberId, @CheckPage @RequestParam(name = "page") Integer page){
-    if(page > 1){
+    if(page >= 1){
       page -= 1;
     }
     Page<Review> review = reviewService.getMyReview(memberId, page);
