@@ -8,4 +8,6 @@ public interface ReviewService {
   public Review addReview(ReviewRequestDTO.addReview review);
 
   public Page<Review> getReview(Long shop_id, Integer page);
+
+  public Page<Review> getMyReview(Long member_id, Integer page);
 }
