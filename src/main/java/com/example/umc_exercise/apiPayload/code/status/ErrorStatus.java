@@ -35,7 +35,13 @@ public enum ErrorStatus implements BaseErrorCode {
 
   // Mission Error
   MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4004", "미션이 존재하지 않습니다"),
-  MISSION_CHALLENGING(HttpStatus.BAD_REQUEST, "MISSION4005", "미션은 진행중인 상태입니다");
+  MISSION_CHALLENGING(HttpStatus.BAD_REQUEST, "MISSION4005", "미션은 진행중인 상태입니다"),
+
+  // MemMission Error
+    MEMBER_MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MEMBER_MISSION4004", "미션을 찾을 수 없습니다"),
+
+  // Page Error
+  PAGE_NUMBER_NOT_VALID(HttpStatus.BAD_REQUEST, "PAGE4001", "페이지 번호가 유효하지 않습니다.");
 
   private final HttpStatus httpStatus;
   private final String code;
