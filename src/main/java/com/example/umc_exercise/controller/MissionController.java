@@ -40,7 +40,7 @@ public class MissionController {
 
   @Operation(summary = "가게에 미션 등록 API", description = "가게에 미션 등록 API")
   @PostMapping
-  public ApiResponse<MissionResponse.MissionRegisterResponseDTO> register(@RequestBody @Valid MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) throws IOException {
+  public ApiResponse<MissionResponse.MissionRegisterResponseDTO> register(@RequestBody @Valid MissionRequest.MissionRegisterRequestDTO missionRegisterRequestDTO) {
     return ApiResponse.onSuccess(MissionConverter.missionRegisterResponseDTO(missionService.register(missionRegisterRequestDTO)));
   }
 
