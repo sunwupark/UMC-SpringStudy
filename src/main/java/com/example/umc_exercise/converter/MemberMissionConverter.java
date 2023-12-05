@@ -9,6 +9,10 @@ import com.example.umc_exercise.dto.MemberMissionRequestDTO;
 import com.example.umc_exercise.dto.MemberMissionResponseDTO;
 import com.example.umc_exercise.dto.MissionRequest;
 import com.example.umc_exercise.dto.MissionResponse;
+import org.springframework.data.domain.Page;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class MemberMissionConverter {
   public static MemberMission toMemberMissionEntity(Mission mission, Member member){
@@ -25,4 +29,14 @@ public class MemberMissionConverter {
             .createdAt(memberMission.getCreatedAt()).build();
   }
 
+  public static List<Long> toMissionIdList(List<MemberMission> memberMissionList){
+    return memberMissionList.stream().map(memberMission -> memberMission.getMission().getId()).collect(Collectors.toList());
+  }
+
+  public static MemberMissionResponseDTO.toMissionCompleteResponseDTO toMissionCompleteResponseDTO(MemberMission save) {
+    return MemberMissionResponseDTO.toMissionCompleteResponseDTO.builder()
+            .memberId(save.getMember().getId())
+            .missionId(save.getMission().getId())
+            .build();
+  }
 }
