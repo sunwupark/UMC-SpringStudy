@@ -1,13 +1,14 @@
 package com.example.umc_exercise.validation.annotation;
 
 import com.example.umc_exercise.validation.validator.MemberExistValidator;
+import com.example.umc_exercise.validation.validator.MissionExistValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = MemberExistValidator.class)
+@Constraint(validatedBy = MissionExistValidator.class)
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ExistMission {
